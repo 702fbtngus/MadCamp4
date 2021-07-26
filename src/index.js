@@ -24,7 +24,8 @@ import store from "./store/store";
 import AppRouter from "./router/AppRouter";
 import "bootstrap/dist/css/bootstrap.min.css";
 //import "./index.css";
-//import "./style.css";
+import "./style.css";
+
 ReactDOM.render(
   <Provider store={store}>
     <AppRouter />
