@@ -2,6 +2,7 @@ import React from 'react';
 import './LP.css';
 import styled, {keyframes} from 'styled-components';
 
+
 const lp = () => {
 
     const BookOpen = () => {
@@ -34,13 +35,18 @@ const lp = () => {
         document.getElementById("button2").style.zIndex = 21;
     }
 
+    const handleLogin = () => {
+        window.location =
+          "https://accounts.spotify.com/ko/authorize?client_id=bcb45f6c1ff34b4c976b4b192062796c&redirect_uri=http:%2F%2Flocalhost:3000%2Fredirect&response_type=token&show_dialog=true";
+      };
+
     return (
         <div id="logincontainer">
             <div id="book">
             </div>
             <div id="leftpage" />
             <div id="rightpage" onClick = { Gujul } />
-            <div id="button1" onClick={ Surak } />
+            <div id="button1" onClick={ handleLogin } />
             <div id="button2" onClick={ Gujul } />
             <div id="bookshadow" />
             <div id="bookbutton" onClick={ BookOpen } />

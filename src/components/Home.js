@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Button } from "react-bootstrap";
 import Header from "./Header";
 import { Redirect } from "react-router-dom";
+import App from '../App';
 
 const Home = (props) => {
   const {
@@ -20,11 +21,11 @@ const Home = (props) => {
   const { isValidSession, location } = props;
   const { state } = location;
   const sessionExpired = state && state.session_expired;
-
+/*
   return (
     <React.Fragment>
       {isValidSession() ? (
-        <Redirect to="/myroom" />
+        <Redirect to="/dashboard" />
       ) : (
         <div className="login">
           <Header />
@@ -38,6 +39,16 @@ const Home = (props) => {
       )}
     </React.Fragment>
   );
+};*/
+
+return (
+  <React.Fragment>
+      <div>
+        <App/>
+      </div>
+      )
+  </React.Fragment>
+);
 };
 
 export default connect()(Home);
