@@ -4,6 +4,7 @@ import Home from "../components/Home";
 import RedirectPage from "../components/RedirectPage";
 import Dashboard from "../components/Dashboard";
 import NotFoundPage from "../components/NotFoundPage";
+import MyRoom from "../components/MyRoom";
 
 class AppRouter extends React.Component {
   state = {
@@ -58,6 +59,12 @@ class AppRouter extends React.Component {
               path="/dashboard"
               render={(props) => (
                 <Dashboard isValidSession={this.isValidSession} {...props} />
+              )}
+            />
+            <Route
+              path="/myroom"
+              render={(props) => (
+                <MyRoom isValidSession={this.isValidSession} {...props} />
               )}
             />
             <Route component={NotFoundPage} />
