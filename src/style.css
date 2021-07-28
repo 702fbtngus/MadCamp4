@@ -49,7 +49,7 @@ body {
 }
 
 .active {
-  border: 2px solid #566273;
+  border: 0.2px solid #566273;
 }
 
 .loading {
@@ -166,4 +166,21 @@ body {
   .main-heading {
     text-align: center;
   }
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: flex-start;
+}
+
+.list-container {
+  height: 700px;
+  width: 500px;
+  border: 25px solid #998776;
+  overflow: scroll;
+  margin-top: 60px;
+}
+
+.active {
+  background-color: #cfc3b8;
 }

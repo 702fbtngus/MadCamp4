@@ -1,25 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
+import styled from 'styled-components';
+import Login from './components/Login';
+
+const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+  /* linear-gradient(
+      to bottom,
+      rgba(20, 20, 20, 0.1) 10%,
+      rgba(20, 20, 20, 0.7) 70%,
+      rgba(20, 20, 20, 1)
+    ), */
+	url("https://i.imgur.com/gxVnhA8.jpg");
+  background-size: cover;
+`;
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Container>
+			<div className="App">
+				<Login />
+			</div>
+		</Container>
+	);
 }
 
 export default App;
