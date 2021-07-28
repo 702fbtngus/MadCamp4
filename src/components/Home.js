@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Button } from "react-bootstrap";
 import Header from "./Header";
 import { Redirect } from "react-router-dom";
-import App from '../App';
+import App from "../App";
 
 const Home = (props) => {
   const {
@@ -15,17 +15,17 @@ const Home = (props) => {
 
   const handleLogin = () => {
     window.location =
-      "https://accounts.spotify.com/ko/authorize?client_id=bcb45f6c1ff34b4c976b4b192062796c&redirect_uri=http:%2F%2Flocalhost:3000%2Fredirect&response_type=token&show_dialog=true";
+      "https://accounts.spotify.com/authorize?response_type=token&client_id=bcb45f6c1ff34b4c976b4b192062796c&redirect_uri=http:%2F%2Flocalhost:3000%2Fredirect&show_dialog=true&scope=streaming%20user-read-email%20user-read-private%20user-library-read%20user-library-modify%20user-read-playback-state%20user-modify-playback-state";
   };
 
   const { isValidSession, location } = props;
   const { state } = location;
   const sessionExpired = state && state.session_expired;
-/*
+  /*
   return (
     <React.Fragment>
       {isValidSession() ? (
-        <Redirect to="/dashboard" />
+        <Redirect to="/playdashboard" />
       ) : (
         <div className="login">
           <Header />
@@ -41,14 +41,14 @@ const Home = (props) => {
   );
 };*/
 
-return (
-  <React.Fragment>
+  return (
+    <React.Fragment>
       <div>
-        <App/>
+        <App />
       </div>
       )
-  </React.Fragment>
-);
+    </React.Fragment>
+  );
 };
 
 export default connect()(Home);
