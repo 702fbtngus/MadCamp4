@@ -152,7 +152,7 @@ const MyRoom = () => {
         }
         try {
             document.getElementById("myroomcontainer").style.background = `linear-gradient(to bottom,  ${colorList[(i,j)]} 0%, rgba(255, 255, 255, 1) 100%)`;
-        } catch {
+        } catch (e) {
             document.getElementById("myroomcontainer").style.background = `white`;
         }
     }
