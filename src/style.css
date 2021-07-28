@@ -174,9 +174,9 @@ body {
 }
 
 .list-container {
-  height: 700px;
-  width: 500px;
-  border: 25px solid #998776;
+  height: 550px;
+  width: 650px;
+  border: 25px solid #978b7f00;
   overflow: scroll;
   margin-top: 60px;
 }
