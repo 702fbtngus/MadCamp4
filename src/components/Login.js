@@ -1,6 +1,5 @@
 import React from 'react';
-import './LP.css';
-import styled, {keyframes} from 'styled-components';
+import './Login.css';
 
 
 const lp = () => {
@@ -18,10 +17,6 @@ const lp = () => {
         document.getElementById("button2").style.zIndex = 40;
     }
 
-    const Surak = () => {
-        console.log('수락하였습니다');
-    }
-
     const Gujul = () => {
         console.log('gujul');
         document.getElementById("music").pause();
@@ -37,22 +32,22 @@ const lp = () => {
 
     const handleLogin = () => {
         window.location =
-          "https://accounts.spotify.com/ko/authorize?client_id=bcb45f6c1ff34b4c976b4b192062796c&redirect_uri=http:%2F%2Flocalhost:3000%2Fredirect&response_type=token&show_dialog=true";
-      };
+            "https://accounts.spotify.com/ko/authorize?client_id=bcb45f6c1ff34b4c976b4b192062796c&redirect_uri=http:%2F%2Flocalhost:3000%2Fredirect&response_type=token&show_dialog=true";
+    };
 
     return (
-        <div id="logincontainer">
+        <div id="allcontainer">
             <div id="book">
             </div>
             <div id="leftpage" />
-            <div id="rightpage" onClick = { Gujul } />
-            <div id="button1" onClick={ handleLogin } />
-            <div id="button2" onClick={ Gujul } />
+            <div id="rightpage" onClick={Gujul} />
+            <div id="button1" onClick={handleLogin} />
+            <div id="button2" onClick={Gujul} />
             <div id="bookshadow" />
-            <div id="bookbutton" onClick={ BookOpen } />
+            <div id="bookbutton" onClick={BookOpen} />
             <div id="lpcontainer">
                 <div id="container">
-                    <audio id="music" src="https://www.mboxdrive.com/lofimusic.mp3"/>
+                    <audio id="music" src="https://www.mboxdrive.com/lofimusic.mp3" />
                     <div id="group">
                         <div id="glow" />
                         <div id="record" />
@@ -64,5 +59,5 @@ const lp = () => {
         </div>
     )
 }
-            
+
 export default lp

@@ -43,14 +43,12 @@ const Home = (props) => {
 
 return (
   <React.Fragment>
-      <Redirect to="/dashboard" />
-    ) : (
       <div>
         <App/>
       </div>
-      )}
+      )
   </React.Fragment>
 );
-
+};
 
 export default connect()(Home);

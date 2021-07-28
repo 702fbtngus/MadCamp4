@@ -1,0 +1,49 @@
+#myroomcontainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    background-size: cover;
+}
+
+#myroombg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://i.imgur.com/hgrdHsZ.png");
+    background-size: cover;
+    z-index: 0;
+}
+
+#myroomtop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://i.imgur.com/F8yuvCp.png");
+    background-size: cover;
+    z-index: 30;
+    pointer-events: none;
+}
+
+#albumshelf {
+    position: absolute;
+    top: 4%;
+    left: 17%;
+    transform: rotateX(-10deg) rotateY(26deg);
+}
+
+#gramophone {
+    top: 65%;
+    left: 74%;
+    width: 2033px;
+    height: 3160px;
+    transform: translate(-50%, -50%) scale(0.1);
+    background-image: url(https://i.imgur.com/uJDbFek.png);
+    position: absolute;
+}
