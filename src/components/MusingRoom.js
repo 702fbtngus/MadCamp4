@@ -7,6 +7,8 @@ import FastAverageColor from "fast-average-color";
 import Player from "../Play/Player";
 import axios from "axios";
 
+var clicked = -1;
+
 const MusingRoom = () => {
   const params = JSON.parse(localStorage.getItem("params"));
   const accessToken = params.access_token;
@@ -77,17 +79,16 @@ const MusingRoom = () => {
     );
   });
 
-  var clicked = -1;
-
   const onSongClick = (i) => {
-    console.log(i, clicked);
     if (clicked != -1) {
       document.getElementById(`back${clicked}`).style.backgroundColor =
         "#ffffff20";
       document.getElementById(`title${clicked}`).style.color = "#ffffff";
       document.getElementById(`artist${clicked}`).style.color = "#ffffff";
     }
+    console.log(i, clicked);
     clicked = i;
+    console.log(i, clicked);
     document.getElementById(
       "musing_record"
     ).style.backgroundImage = `url(${playlist[i].albumUrl})`;

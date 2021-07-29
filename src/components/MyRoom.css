@@ -128,3 +128,17 @@
     background-repeat: no-repeat;
     z-index: 30;
 }
+
+#spotifybutton {
+    position: absolute;
+    top: 22%;
+    left: 80%;
+    width: 15%;
+    height: 15%;
+    transform: translate(-50%, -50%);
+    background-image: url(https://i.imgur.com/hGfOESR.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(10px 10px 5px #00000080);
+    z-index: 30;
+}

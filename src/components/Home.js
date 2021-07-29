@@ -45,7 +45,7 @@ const Home = (props) => {
   return (
     <React.Fragment>
       {isValidSession() ? (
-        <Redirect to="/dashboard" />
+        <Redirect to="/myroom" />
       ) : (
         <div className="login">
           <Header />
