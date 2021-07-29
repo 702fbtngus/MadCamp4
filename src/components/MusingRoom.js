@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./MusingRoom.css";
 import styled, { keyframes } from "styled-components";
 // import ReactCursorPosition from 'react-cursor-position';
 import useMousePosition from "./useMousePosition";
 import FastAverageColor from "fast-average-color";
 import Player from "../Play/Player";
+import axios from "axios";
 
 const MusingRoom = () => {
   const params = JSON.parse(localStorage.getItem("params"));
@@ -13,6 +14,8 @@ const MusingRoom = () => {
   const unit = a.map((unit, idx) => {
     return unit - 1;
   });
+  const [playingTrack, setPlayingTrack] = useState();
+  const [lyrics, setLyrics] = useState("");
   //console.log(unit);
   const playlist = [
     {
@@ -45,14 +48,44 @@ const MusingRoom = () => {
     },
   ];
 
+  function chooseTrack(track) {
+    setPlayingTrack(track);
+    setLyrics("");
+  }
+
+  useEffect(() => {
+    if (!playingTrack) return;
+
+    axios
+      .get("http://localhost:3001/lyrics", {
+        params: {
+          track: playingTrack.title,
+          artist: playingTrack.artist,
+        },
+      })
+      .then((res) => {
+        setLyrics(res.data.lyrics);
+      });
+  }, [playingTrack]);
+
+  useEffect(() => {
+    setPlayingTrack(
+      playlist.map((track) => {
+        return {
+          artist: track.artists,
+          title: track.title,
+          uri: track.uri,
+          //albumUrl: track.album.images[0].url,
+        };
+      })
+    );
+  });
+
   return (
     <div id="musing_allcontainer">
       <div id="player_container">
         <Player
           accessToken={accessToken}
-          //trackUri={"spotify:track:54flyrjcdnQdco7300avMJ"}
-          //trackUri={"spotify:track:3G3c7sWlKSv12ft9TGy3D0"}
-
           trackUri={playlist.map((track) => {
             return track.uri;
           })}
@@ -68,7 +101,7 @@ const MusingRoom = () => {
                 id="musing_record"
                 style={{
                   backgroundImage: `url(
-                      "https://image.bugsm.co.kr/album/images/1000/202837/20283717.jpg"
+                    "https://i.scdn.co/image/ab67616d0000485180c0a2d0bf89e3707b6365c4"
                     )`,
                 }}
               />
