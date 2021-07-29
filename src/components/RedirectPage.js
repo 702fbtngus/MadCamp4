@@ -17,6 +17,7 @@ export default class RedirectPage extends React.Component {
       localStorage.setItem("params", JSON.stringify(access_token));
       localStorage.setItem("expiry_time", expiryTime);
       setExpiryTime(expiryTime);
+      /*
       const params = JSON.parse(localStorage.getItem("params"));
       const headers = {
         Accept: "application/json",
@@ -42,7 +43,8 @@ export default class RedirectPage extends React.Component {
         })
         .catch((err) => {
           console.log(err);
-        });
+        });*/
+      history.push("/playdashboard");
     } catch (error) {
       history.push("/");
     }
