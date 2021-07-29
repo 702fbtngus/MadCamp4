@@ -10,6 +10,8 @@ import SpotifyPlayer from "react-spotify-web-playback";
 
 //var clicked = -1;
 
+var clicked = -1;
+
 const MusingRoom = () => {
   const params = JSON.parse(localStorage.getItem("params"));
   const accessToken = params.access_token;

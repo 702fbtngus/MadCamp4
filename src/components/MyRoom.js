@@ -100,7 +100,7 @@ const MyRoom = () => {
         }
         if (clicked == -1) {
             try {
-                document.getElementById("myroomlight").style.background = `linear-gradient(to bottom,  ${colorList[(i, j)]} 0%, ${colorList[(i, j)]} 100%)`;
+                document.getElementById("myroomlight").style.background = `linear-gradient(to bottom,  ${colorList[`${i}.${j}`]} 0%, ${colorList[`${i}.${j}`]} 100%)`;
             } catch (e) {
                 document.getElementById("myroomlight").style.background = `white`;
             }
@@ -109,7 +109,6 @@ const MyRoom = () => {
 
     const onAlbumLeave = (i, j) => {
         if (clicked == i) { return; }
-        console.log("leave", i, j);
         if (albumList[i].length >= 9) {
             for (let k = 0; k < albumList[i].length; k++) {
                 document.getElementById(`album.${i}.${k}`).style.left = `${k / (albumList[i].length - 1) * 71 + 5}%`;
@@ -155,7 +154,7 @@ const MyRoom = () => {
                 document.getElementById(`album.${i}.${k}`).style.left = `${k / 8 * 50 + 5}%`;
             }
         }
-        document.getElementById("myroomlight").style.background = `linear-gradient(to bottom,  ${colorList[(i, j)]} 0%, ${colorList[(i, j)]} 100%)`;
+        document.getElementById("myroomlight").style.background = `linear-gradient(to bottom,  ${colorList[`${i}.${j}`]} 0%, ${colorList[`${i}.${j}`]} 100%)`;
         document.getElementById(`myroomaddbutton${i}`).style.opacity = 1;
         document.getElementById(`myroomplaybutton${i}`).style.opacity = 1;
     }
@@ -175,6 +174,11 @@ const MyRoom = () => {
     const onGramo = () => {
         window.location =
             "localhost:3000/musingroom";
+    };
+    
+    const toSpotify = () => {
+        window.location =
+            "localhost:3000/dashboard";
     };
 
     // function fac(u) {
@@ -249,9 +253,7 @@ const MyRoom = () => {
                 fac.getColorAsync(albumList[i][j])
                     .then(color => {
                         // document.getElementById("main-heading").style.color = color.isDark ? '#fff' : '#000';
-                        console.log('Average color', color);
-                        colorList[(i, j)] = color.rgba;
-                        console.log(colorList[(i, j)]);
+                        colorList[`${i}.${j}`] = color.rgba;
                     })
             }
         }
@@ -320,6 +322,9 @@ const MyRoom = () => {
             </div>
             <Link to="./musingroom">
                 <div id="gramophone" onClick={onGramo} />
+            </Link>
+            <Link to="./dashboard">
+            <div id="spotifybutton" onClick={toSpotify} />
             </Link>
         </div>
     );
