@@ -1,5 +1,5 @@
 * {
-  transition: all 0.1s;
+    transition: all 0.1s;
 }
 
 #allcontainer {
@@ -24,9 +24,9 @@
 #book {
     position: absolute;
     top: 65%;
-    left: 50%;
-    width: 65%;
-    height: 65%;
+    left: 40%;
+    width: 70%;
+    height: 70%;
     transform: translate(-50%, -50%);
     /* background-image: ${ state => state.open ? "https://i.imgur.com/RBFxtQa.gif" : "https://i.imgur.com/hK1tWrJ.gif"}; */
     background-image: url(https://i.imgur.com/yQJ68EB.gif);
@@ -42,246 +42,266 @@
         transform: perspective(3000px) translate(-50%, -50%);
         opacity: 1;
     }
-    25% {
+    27% {
         opacity: 1;
     }
-    26% {
+    28% {
         opacity: 0;
     }
     100% {
-        transform: perspective(3000px) translate(-64%, -50%) rotateY(-180deg);
+        transform: perspective(3000px) translate(-49%, -50%) rotateY(-180deg);
         opacity: 0;
     }
 }
 
 @keyframes bookrevflip {
-  0% {
-    transform: perspective(3000px) translate(-64%, -50%) scale(80%)
-      rotateY(-180deg);
-    opacity: 0;
-  }
-  35% {
-    opacity: 0;
-  }
-  36% {
-    opacity: 1;
-  }
-  100% {
-    transform: perspective(3000px) translate(-65%, -50%) scale(80%);
-    opacity: 1;
-  }
+    0% {
+        transform: perspective(3000px) translate(-49%, -50%) rotateY(-180deg);
+        opacity: 0;
+    }
+    31% {
+        opacity: 0;
+    }
+    32% {
+        opacity: 1;
+    }
+    100% {
+        transform: perspective(3000px) translate(-50%, -50%);
+        opacity: 1;
+    }
 }
 
 #leftpage {
     position: absolute;
     top: 64.6%;
-    left: 38.3%;
-    width: 30.2%;
-    height: 50%;
+    left: 40.4%;
+    width: 48.4%;
+    height: 48.4%;
     transform: translate(-50%, -50%);
     background-image: url(https://i.imgur.com/10JhvFN.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 30;
-    /* animation: leftpageflip 3s paused; */
+    animation: leftpageflip 3s paused;
 }
 
 @keyframes leftpageflip {
     0% {
-        transform: perspective(5000px) translate(-50%, -50%) rotateY(180deg);
+        transform: perspective(4000px) translate(-50%, -50%) rotateY(180deg);
         opacity: 0;
     }
-    25% {
+    27% {
         opacity: 0;
     }
-    26% {
+    28% {
         opacity: 1;
     }
     100% {
-        transform: perspective(5000px) translate(-62.5%, -50%) rotateY(0deg);
+        transform: perspective(4000px) translate(-50%, -50%) rotateY(0deg);
         opacity: 1;
     }
 }
 
 @keyframes leftpagerevflip {
-  0% {
-    transform: perspective(5000px) translate(-62.5%, -50.5%) scale(52.5%)
-      rotateY(0deg);
-    opacity: 1;
-  }
-  35% {
-    opacity: 1;
-  }
-  36% {
-    opacity: 0;
-  }
-  100% {
-    transform: perspective(5000px) translate(-62.5%, -50.5%) scale(52.5%)
-      rotateY(180deg);
-    opacity: 0;
-  }
+    0% {
+        transform: perspective(4000px) translate(-50%, -50%) rotateY(0deg);
+        opacity: 1;
+    }
+    31% {
+        opacity: 1;
+    }
+    32% {
+        opacity: 0;
+    }
+    100% {
+        transform: perspective(4000px) translate(-50%, -50%) rotateY(180deg);
+        opacity: 0;
+    }
 }
 
 #rightpage {
-  top: 70%;
-  left: 50%;
-  width: 30%;
-  height: 40%;
-  transform: translate(-62.8%, -50.5%) scale(52.5%);
-  /* background-image: ${ state => state.open ? "https://i.imgur.com/RBFxtQa.gif" : "https://i.imgur.com/hK1tWrJ.gif"}; */
-  background-image: url(https://i.imgur.com/w6NMu4k.png);
-  background-size: cover;
-  background-size: cover;
-  position: absolute;
-  z-index: 20;
-  /* animation: bookflip 3s infinite running; */
+    position: absolute;
+    top: 64.6%;
+    left: 40.4%;
+    width: 48.4%;
+    height: 48.4%;
+    transform: translate(-50%, -50%);
+    background-image: url(https://i.imgur.com/w6NMu4k.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 20;
+    /* animation: bookflip 3s infinite running; */
 }
 
 #button1 {
-  top: 74%;
-  left: 41.5%;
-  width: 120px;
-  height: 100px;
-  position: absolute;
-  background-color: white;
-  z-index: 21;
+    position: absolute;
+    top: 69%;
+    left: 42%;
+    width: 120px;
+    height: 100px;
+    z-index: 21;
 }
 
 #button2 {
-  top: 74%;
-  left: 49.5%;
-  width: 120px;
-  height: 100px;
-  position: absolute;
-  z-index: 21;
+    position: absolute;
+    top: 69%;
+    left: 48.5%;
+    width: 120px;
+    height: 100px;
+    z-index: 21;
 }
 
 #bookshadow {
-  top: 70%;
-  left: 50%;
-  width: 1141px;
-  height: 871px;
-  transform: translate(-65%, -50%) scale(80%);
-  background-image: url(https://i.imgur.com/YbvkOl9.gif);
-  position: absolute;
-  z-index: 10;
+    position: absolute;
+    top: 65%;
+    left: 40%;
+    width: 70%;
+    height: 70%;
+    transform: translate(-50%, -50%);
+    /* background-image: ${ state => state.open ? "https://i.imgur.com/RBFxtQa.gif" : "https://i.imgur.com/hK1tWrJ.gif"}; */
+    background-image: url(https://i.imgur.com/YbvkOl9.gif);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 15;
 }
 
 #bookbutton {
-  top: 70%;
-  left: 50%;
-  width: 1141px;
-  height: 871px;
-  transform: translate(-65%, -50%) scale(80%);
-  position: absolute;
-  z-index: 30;
+    position: absolute;
+    top: 64.6%;
+    left: 48.5%;
+    width: 18%;
+    height: 48.4%;
+    transform: translate(-50%, -50%);
+    z-index: 30;
 }
 
 #lpcontainer {
-  position: absolute;
-  bottom: 20%;
-  right: 35%;
-  zoom: 0.5;
-  transform: rotate(-30deg);
+    position: absolute;
+    top: 80%;
+    left: 85%;
+    width: 30%;
+    height: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
 }
 
 #container {
-  width: 795px;
-  height: 716px;
-  background-image: url(https://i.imgur.com/LS1FizP.png);
-  position: absolute;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://i.imgur.com/LS1FizP.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #group {
     position: absolute;
-    bottom: 160px;
-    right: 280px;
-    transform: rotate(18deg);
+    width: 100%;
+    height: 100%;
+    /* transform: rotate(18deg); */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #glow {
-  background-image: url(https://i.imgur.com/JvU1w5n.png);
-  position: absolute;
-  left: 355px;
-  top: 78px;
-  z-index: 15;
-  width: 509px;
-  height: 509px;
-  zoom: 1.28;
-  animation: wobble 4s ease-in-out infinite;
+    position: absolute;
+    left: -8%;
+    top: 4%;
+    width: 100%;
+    height: 100%;
+    background-image: url(https://i.imgur.com/JvU1w5n.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 15;
+    animation: wobble 4s ease-in-out infinite;
 }
 
 @keyframes wobble {
-  0% {
-    transform: rotate(-10deg);
-    opacity: 1;
-  }
+    0% {
+        transform: rotate(-10deg);
+        opacity: 1;
+    }
 
-  50% {
-    transform: rotate(0deg);
-    opacity: 0.6;
-  }
+    50% {
+        transform: rotate(0deg);
+        opacity: 0.6;
+    }
 
-  100% {
-    transform: rotate(-10deg);
-    opacity: 1;
-  }
+    100% {
+        transform: rotate(-10deg);
+        opacity: 1;
+    }
 }
 
 #record {
-  background-image: url(https://i.imgur.com/PVjYXsN.png);
-  position: absolute;
-  left: 355px;
-  top: 78px;
-  z-index: 5;
-  width: 509px;
-  height: 509px;
-  zoom: 1.28;
-  animation: spin 3s linear infinite paused;
+    position: absolute;
+    left: 1%;
+    top: 6%;
+    width: 89%;
+    height: 89%;
+    background-image: url(https://i.imgur.com/PVjYXsN.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 5;
+    animation: spin 3s linear infinite paused;
 }
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
 
-  100% {
-    transform: rotate(360deg);
-  }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 #arm {
-  background-image: url(https://i.imgur.com/5W0cHYQ.png);
-  left: 970px;
-  top: 10px;
-  width: 176px;
-  height: 609px;
-  z-index: 20;
-  position: absolute;
-  animation: armwobble 10s ease-in-out infinite paused;
+    position: absolute;
+    left: 30%;
+    top: -43%;
+    width: 100%;
+    height: 130%;
+    background-image: url(https://i.imgur.com/AeMbEHA.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: drop-shadow(5px 5px 5px #000000);
+    z-index: 20;
+    animation: armwobble 10s ease-in-out infinite paused;
 }
 
 @keyframes armwobble {
-  0% {
-    transform: rotate(5deg) translate(-15px, 5px);
-  }
+    0% {
+        transform: rotate(17deg);
+    }
 
-  50% {
-    transform: rotate(18deg) translate(-53px, 18px);
-  }
+    50% {
+        transform: rotate(42deg);
+    }
 
-  100% {
-    transform: rotate(5deg) translate(-15px, 5px);
-  }
+    100% {
+        transform: rotate(17deg);
+    }
 }
 
 #top {
-  background-image: url(https://i.imgur.com/g2yJ9x9.png);
-  left: 725px;
-  top: 123px;
-  width: 427px;
-  height: 495px;
-  z-index: 20;
-  position: absolute;
+    position: absolute;
+    left: 13%;
+    top: 14%;
+    width: 100%;
+    height: 67%;
+    transform: rotate(17deg);
+    background-image: url(https://i.imgur.com/g2yJ9x9.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: drop-shadow(5px 5px 5px #000000);
+    z-index: 20;
 }
