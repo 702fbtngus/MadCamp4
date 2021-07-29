@@ -24,34 +24,41 @@ const MusingRoom = () => {
       title: "Sweet Chaos",
       uri: "spotify:track:3G3c7sWlKSv12ft9TGy3D0",
       albumUrl:
-        "https://i.scdn.co/image/ab67616d00004851e3f3b11777ef77dcf72d9cd2",
+        "https://i.scdn.co/image/ab67616d0000b273e3f3b11777ef77dcf72d9cd2",
     },
     {
       artist: "DAY6 (Even of Day)",
       title: "뚫고 지나가요 Right Through Me",
       uri: "spotify:track:6PiDq1VQiwWHxBJjdKviuZ",
       albumUrl:
-        "https://i.scdn.co/image/ab67616d00004851a1f6e0ef3baee6f6c65679f5",
+        "https://i.scdn.co/image/ab67616d0000b273a1f6e0ef3baee6f6c65679f5",
     },
     {
       artist: "DAY6",
       title: "Zombie",
       uri: "spotify:track:0LcQLfS4gjaFyPReRdExtQ",
       albumUrl:
-        "https://i.scdn.co/image/ab67616d000048516b2b448f14b021b049cdceb1",
+        "https://i.scdn.co/image/ab67616d0000b2736b2b448f14b021b049cdceb1",
     },
     {
       artist: "DAY6",
       title: "한 페이지가 될 수 있게",
       uri: "spotify:track:0EhdXt3y460mTRsi97Pyk5",
       albumUrl:
-        "https://i.scdn.co/image/ab67616d0000485180c0a2d0bf89e3707b6365c4",
+        "https://i.scdn.co/image/ab67616d0000b27380c0a2d0bf89e3707b6365c4",
+    },
+    {
+      artist: "DAY6",
+      title: "예뻤어",
+      uri: "spotify:track:3Pqp7yCHo6hbxMS0ZGc93N",
+      albumUrl:
+        "https://i.scdn.co/image/ab67616d0000b273b6d756ed33cd43ec46ffe6db",
     },
   ];
 
   function chooseTrack(track) {
     setPlayingTrack(track);
-    setLyrics("");
+    //setLyrics("");
   }
   /*
   useEffect(() => {
@@ -77,7 +84,7 @@ const MusingRoom = () => {
           artist: track.artists,
           title: track.title,
           uri: track.uri,
-          //albumUrl: track.album.images[0].url,
+          albumUrl: track.albumUrl,
         };
       })
     );
@@ -103,7 +110,7 @@ const MusingRoom = () => {
                 id="musing_record"
                 style={{
                   backgroundImage: `url(
-                    "https://i.scdn.co/image/ab67616d0000485180c0a2d0bf89e3707b6365c4"
+                    "https://i.scdn.co/image/ab67616d0000b273e3f3b11777ef77dcf72d9cd2"
                     )`,
                 }}
               />

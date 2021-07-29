@@ -14,6 +14,7 @@
     "cra-template": "1.1.2",
     "create-react-class": "^15.7.0",
     "fast-average-color": "^6.4.1",
+    "firebase": "^8.8.0",
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "prop-types": "15.7.2",
