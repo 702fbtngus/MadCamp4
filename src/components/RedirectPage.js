@@ -28,6 +28,7 @@ export default class RedirectPage extends React.Component {
         .then((res) => {
 
           console.log(res.data.email);
+          localStorage.setItem('email', res.data.email)
           firestore.collection('users').doc(res.data.email).set({
             playlists: []
           }).then(function () {
