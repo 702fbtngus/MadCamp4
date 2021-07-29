@@ -7,61 +7,164 @@ import FastAverageColor from 'fast-average-color';
 
 const MusingRoom = () => {
 
+    const playlist = [{
+        artist: "태연",
+        title: "Weekend",
+        uri: "spotify:track:7j2FhVH4n7X7D669o8T87z",
+        albumUrl: "https://image.bugsm.co.kr/album/images/original/204073/20407398.jpg?version=undefined"
+    }, {
+        artist: "STAYC",
+        title: "ASAP",
+        uri: "spotify:track:7j2FhVH4n7X7D669o8T87z",
+        albumUrl: "https://image.bugsm.co.kr/album/images/original/40400/4040011.jpg?version=undefined"
+    }, {
+        artist: "오마이걸",
+        title: "Dun Dun Dance",
+        uri: "spotify:track:7j2FhVH4n7X7D669o8T87z",
+        albumUrl: "https://image.bugsm.co.kr/album/images/original/154325/15432584.jpg?version=undefined"
+    }, {
+        artist: "AKMU",
+        title: "낙하",
+        uri: "spotify:track:7j2FhVH4n7X7D669o8T87z",
+        albumUrl: "https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined"
+    }, {
+        artist: "BTS",
+        title: "Permission to Dance",
+        uri: "spotify:track:7j2FhVH4n7X7D669o8T87z",
+        albumUrl: "https://image.bugsm.co.kr/album/images/original/40553/4055320.jpg?version=undefined"
+    }, {
+        artist: "태연",
+        title: "Weekend",
+        uri: "spotify:track:7j2FhVH4n7X7D669o8T87z",
+        albumUrl: "https://image.bugsm.co.kr/album/images/original/204073/20407398.jpg?version=undefined"
+    }, {
+        artist: "STAYC",
+        title: "ASAP",
+        uri: "spotify:track:7j2FhVH4n7X7D669o8T87z",
+        albumUrl: "https://image.bugsm.co.kr/album/images/original/40400/4040011.jpg?version=undefined"
+    }, {
+        artist: "오마이걸",
+        title: "Dun Dun Dance",
+        uri: "spotify:track:7j2FhVH4n7X7D669o8T87z",
+        albumUrl: "https://image.bugsm.co.kr/album/images/original/154325/15432584.jpg?version=undefined"
+    }, {
+        artist: "AKMU",
+        title: "낙하",
+        uri: "spotify:track:7j2FhVH4n7X7D669o8T87z",
+        albumUrl: "https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined"
+    }, {
+        artist: "BTS",
+        title: "Permission to Dance",
+        uri: "spotify:track:7j2FhVH4n7X7D669o8T87z",
+        albumUrl: "https://image.bugsm.co.kr/album/images/original/40553/4055320.jpg?version=undefined"
+    }]
 
-    // const D1 = () => {
-    //     console.log("d1");
-    //     const { x, y } = useMousePosition();
-    //     console.log(x, y);
-    // }
+    var clicked = -1;
 
-    // const dragStartHandler = e => {
-    //     const img = new Image();
-    //     e.dataTransfer.setDragImage(img, 0, 0);
+    const onSongClick = (i) => {
+        if (clicked != -1)
+        {
+            document.getElementById(`back${clicked}`).style.backgroundColor = "#ffffff20";
+            document.getElementById(`title${clicked}`).style.color = "#ffffff";
+            document.getElementById(`artist${clicked}`).style.color = "#ffffff";
+        }
+        clicked = i
+        document.getElementById("musing_record").style.backgroundImage = `url(${playlist[i].albumUrl})`;
+        document.getElementById(`back${clicked}`).style.backgroundColor = "#ffffff80";
+        document.getElementById(`title${clicked}`).style.color = "#000000";
+        document.getElementById(`artist${clicked}`).style.color = "#000000";
+    }
 
-    //     posX = e.clientX;
-    //     posY = e.clientY;
+    const renderPL = () => {
+        let items = [];
+        for (let i = 0; i < playlist.length; i++) {
+            items.push(
+                <div id={`song${i}`}
+                    style={{
+                        width: "100%",
+                        height: "20%",
+                        // backgroundImage: `url("https://i.imgur.com/HCE3tv2.png")`,
+                        backgroundSize: "contain",
+                        backgroundRepeat: "no-repeat",
+                        alignSelf: "center",
+                        justifyContent: "center",
+                        position: "relative"
+                    }} // 계산할 수 있게 사이즈를 지정했다.
+                >
+                    <div style={{
+                        position: "absolute",
+                        width: "100%",
+                        height: "90%",
+                        zIndex: "40"
+                    }} onClick={() => { onSongClick(i); }}/>
+                    
+                    <div id={`back${i}`}
+                    style={{
+                        position: "absolute",
+                        width: "100%",
+                        height: "90%",
+                        backgroundColor: "#ffffff20",
+                    }}>
+                        <div style={{
+                            position: "absolute",
+                            width: "70%",
+                            height: "70%",
+                            top: "10%",
+                            left: "3%",
+                            backgroundSize: "contain",
+                            backgroundRepeat: "no-repeat",
+                            backgroundImage: `url(${playlist[i].albumUrl})`,
+                            filter: "drop-shadow(5px 5px 5px #00000080)",
+                        }} />
 
-    //     originalX = e.target.offsetLeft;
-    //     originalY = e.target.offsetTop;
-    // };
+                        <div id={`title${i}`}
+                        style={{
+                            position: "absolute",
+                            width: "70%",
+                            height: "70%",
+                            top: "10%",
+                            left: "25%",
+                            filter: "drop-shadow(5px 5px 5px #00000080)",
+                            color: "#ffffff",
+                            fontFamily: 'SEBANG_Gothic_Bold',
+                            fontSize: "25px",
+                        }}>{playlist[i].title}</div>
+                        
+                        <div id={`artist${i}`}
+                        style={{
+                            position: "absolute",
+                            width: "70%",
+                            height: "70%",
+                            top: "50%",
+                            left: "25%",
+                            filter: "drop-shadow(5px 5px 5px #00000080)",
+                            color: "#ffffff",
+                            fontSize: "18px",
+                        }}>{playlist[i].artist}</div>
 
-    // const dragHandler = e => {
-    //     e.target.style.left = `${e.target.offsetLeft + e.clientX - posX}px`;
-    //     e.target.style.top = `${e.target.offsetTop + e.clientY - posY}px`;
-    //     posY = e.clientY;
-    //     posX = e.clientX;
-    // };
-    // const D1 = () => {
-    //     console.log("d1");
-    // }
-
-    // const d2 = () => {
-    //     console.log("d2");
-    // }
-
-    // const d3 = () => {
-    //     console.log("d3");
-    // }
-
-    // const d4 = () => {
-    //     console.log("d4");
-    // }
+                    </div>
+                </div>
+            );
+        }
+        return items;
+    };
 
     return (
         <div id="musing_allcontainer">
-            <div id="musing_logincontainer">
-                <div id="musing_lpcontainer">
-                    <div id="musing_container">
-                        <audio id="music" src="https://www.mboxdrive.com/lofimusic.mp3" />
-                        <div id="musing_group">
-                            <div id="musing_glow" />
-                            <div id="musing_record" />
-                            <div id="musing_arm" />
-                            {/* // <div id="musing_arm" onDrag={dragHandler} onDragStart={dragStartHandler} onDragEnd={d3} onDrop={d4} /> */}
-                            <div id="musing_top" />
-                        </div>
+            <div id="musing_lpcontainer">
+                <div id="musing_container">
+                    <audio id="music" src="https://www.mboxdrive.com/lofimusic.mp3" />
+                    <div id="musing_group">
+                        <div id="musing_glow" />
+                        <div id="musing_record" />
+                        <div id="musing_arm" />
+                        {/* // <div id="musing_arm" onDrag={dragHandler} onDragStart={dragStartHandler} onDragEnd={d3} onDrop={d4} /> */}
+                        <div id="musing_top" />
                     </div>
                 </div>
+            </div>
+            <div id="musing_playlist">
+                {renderPL()}
             </div>
         </div>
     )
