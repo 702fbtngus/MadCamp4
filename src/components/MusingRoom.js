@@ -21,13 +21,6 @@ const MusingRoom = () => {
         "https://i.scdn.co/image/ab67616d0000b273e3f3b11777ef77dcf72d9cd2",
     },
     {
-      artist: "DAY6 (Even of Day)",
-      title: "뚫고 지나가요 Right Through Me",
-      uri: "spotify:track:6PiDq1VQiwWHxBJjdKviuZ",
-      albumUrl:
-        "https://i.scdn.co/image/ab67616d0000b273a1f6e0ef3baee6f6c65679f5",
-    },
-    {
       artist: "DAY6",
       title: "Zombie",
       uri: "spotify:track:0LcQLfS4gjaFyPReRdExtQ",
@@ -87,6 +80,7 @@ const MusingRoom = () => {
   var clicked = -1;
 
   const onSongClick = (i) => {
+    console.log(i, clicked);
     if (clicked != -1) {
       document.getElementById(`back${clicked}`).style.backgroundColor =
         "#ffffff20";
@@ -182,6 +176,7 @@ const MusingRoom = () => {
                 left: "25%",
                 filter: "drop-shadow(5px 5px 5px #00000080)",
                 color: "#ffffff",
+                fontFamily: "SEBANG_Gothic_Bold",
                 fontSize: "18px",
               }}
             >
