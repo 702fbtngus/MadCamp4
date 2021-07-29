@@ -11,6 +11,7 @@ const MusingRoom = () => {
   const params = JSON.parse(localStorage.getItem("params"));
   const accessToken = params.access_token;
   const a = [1, 3, 5];
+
   const unit = a.map((unit, idx) => {
     return unit - 1;
   });
@@ -52,7 +53,7 @@ const MusingRoom = () => {
     setPlayingTrack(track);
     setLyrics("");
   }
-
+  /*
   useEffect(() => {
     if (!playingTrack) return;
 
@@ -67,6 +68,7 @@ const MusingRoom = () => {
         setLyrics(res.data.lyrics);
       });
   }, [playingTrack]);
+  */
 
   useEffect(() => {
     setPlayingTrack(
