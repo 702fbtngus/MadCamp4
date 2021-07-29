@@ -17,7 +17,13 @@ export default function PlayDashboard() {
   const [playingTrack, setPlayingTrack] = useState();
   const [lyrics, setLyrics] = useState("");
 
+
+  const playlistIndex = localStorage.getItem("indexButton");
+  const addPlaylist = localStorage.getItem("addButton");
+  const email = localStorage.getItem('email');
+
   function chooseTrack(track) {
+
     setPlayingTrack(track);
     setSearch("");
     setLyrics("");
