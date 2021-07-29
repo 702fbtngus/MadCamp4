@@ -139,7 +139,6 @@ const MusingRoom = () => {
                             left: "25%",
                             filter: "drop-shadow(5px 5px 5px #00000080)",
                             color: "#ffffff",
-                            fontFamily: 'SEBANG_Gothic_Bold',
                             fontSize: "18px",
                         }}>{playlist[i].artist}</div>
 
