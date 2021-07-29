@@ -2,6 +2,7 @@ import React from "react";
 import _ from "lodash";
 import { getParamValues } from "../utils/functions";
 import axios from "axios";
+import { firestore } from "../fbase";
 
 export default class RedirectPage extends React.Component {
   componentDidMount() {
