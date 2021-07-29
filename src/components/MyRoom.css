@@ -71,16 +71,6 @@
 }
 
 #myroomaddbutton {
-    position: absolute;
-    top: 47%;
-    left: 74%;
-    width: 15%;
-    height: 30%;
-    background-image: url("https://i.imgur.com/v3vvZNy.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    filter: drop-shadow(-7px -7px 5px #000000ff);
-    z-index: 25;
 }
 
 
@@ -90,6 +80,7 @@
     left: 74%;
     width: 15%;
     height: 30%;
+    opacity: 0;
     background-image: url("https://i.imgur.com/HCE3tv2.png");
     background-size: contain;
     background-repeat: no-repeat;
