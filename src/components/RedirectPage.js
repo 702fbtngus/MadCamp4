@@ -26,12 +26,22 @@ export default class RedirectPage extends React.Component {
       axios
         .get("https://api.spotify.com/v1/me", { headers })
         .then((res) => {
+
           console.log(res.data.email);
+          firestore.collection('users').doc(res.data.email).set({
+            playlists: []
+          }).then(function () {
+            console.log(1)
+            history.push("/playdashboard");
+          }).catch(function (error) {
+            console.log('error', error)
+          })
+
+
         })
         .catch((err) => {
           console.log(err);
         });
-      history.push("/playdashboard");
     } catch (error) {
       history.push("/");
     }

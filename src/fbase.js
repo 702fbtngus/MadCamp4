@@ -11,5 +11,7 @@ var firebaseConfig = {
     measurementId: "G-5X2RCJL921"
 };
 
+firebase.initializeApp(firebaseConfig);
+
 export const firebaseInstance = firebase;
-export const firestore = firebase.firestore;
+export const firestore = firebase.firestore();
