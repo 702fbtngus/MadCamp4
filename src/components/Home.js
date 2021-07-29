@@ -5,6 +5,7 @@ import { Button } from "react-bootstrap";
 import Header from "./Header";
 import { Redirect } from "react-router-dom";
 import App from "../App";
+import Login from "./Login";
 
 const Home = (props) => {
   const {
@@ -43,12 +44,29 @@ const Home = (props) => {
 
   return (
     <React.Fragment>
+      {isValidSession() ? (
+        <Redirect to="/dashboard" />
+      ) : (
+        <div className="login">
+          <Header />
+          {sessionExpired && (
+            <Alert variant="info">Session expired. Please login again.</Alert>
+          )}
+          <Login />
+        </div>
+      )}
+    </React.Fragment>
+  );
+};
+/*
+  return (
+    <React.Fragment>
       <div>
         <App />
       </div>
       )
     </React.Fragment>
   );
-};
+};*/
 
 export default connect()(Home);
