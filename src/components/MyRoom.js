@@ -1,23 +1,10 @@
 import React from "react";
-import { render } from "react-dom";
 import { useEffect, useRef, useState } from "react";
-// import "../style.css";
 import './MyRoom.css';
-import { func } from "prop-types";
 import { Link } from "react-router-dom"
 import FastAverageColor from 'fast-average-color';
 
 const MyRoom = () => {
-
-    const mo = () => {
-        console.log("mouse over");
-        document.getElementById("main-heading").textContent = "My ......... Room";
-    }
-
-    const ml = () => {
-        console.log("mouse leave");
-        document.getElementById("main-heading").textContent = "My Room";
-    }
 
     const albumList = [["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40553/4055320.jpg?version=undefined",
@@ -28,7 +15,7 @@ const MyRoom = () => {
         "https://image.bugsm.co.kr/album/images/original/40491/4049180.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/154325/15432584.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40400/4040011.jpg?version=undefined"],
-        ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
+    ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40553/4055320.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/204073/20407398.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/203973/20397321.jpg?version=undefined",
@@ -37,7 +24,7 @@ const MyRoom = () => {
         "https://image.bugsm.co.kr/album/images/original/40491/4049180.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/154325/15432584.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40400/4040011.jpg?version=undefined"],
-        ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
+    ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40553/4055320.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/204073/20407398.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/203973/20397321.jpg?version=undefined",
@@ -46,7 +33,7 @@ const MyRoom = () => {
         "https://image.bugsm.co.kr/album/images/original/40491/4049180.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/154325/15432584.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40400/4040011.jpg?version=undefined"],
-        ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
+    ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40553/4055320.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/204073/20407398.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/203973/20397321.jpg?version=undefined",
@@ -55,7 +42,7 @@ const MyRoom = () => {
         "https://image.bugsm.co.kr/album/images/original/40491/4049180.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/154325/15432584.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40400/4040011.jpg?version=undefined"],
-        ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
+    ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40553/4055320.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/204073/20407398.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/203973/20397321.jpg?version=undefined",
@@ -64,7 +51,7 @@ const MyRoom = () => {
         "https://image.bugsm.co.kr/album/images/original/40491/4049180.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/154325/15432584.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40400/4040011.jpg?version=undefined"],
-        ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
+    ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40553/4055320.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/204073/20407398.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/203973/20397321.jpg?version=undefined",
@@ -73,7 +60,7 @@ const MyRoom = () => {
         "https://image.bugsm.co.kr/album/images/original/40491/4049180.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/154325/15432584.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40400/4040011.jpg?version=undefined"],
-        ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
+    ["https://image.bugsm.co.kr/album/images/original/40586/4058623.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/40553/4055320.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/204073/20407398.jpg?version=undefined",
         "https://image.bugsm.co.kr/album/images/original/203973/20397321.jpg?version=undefined",
@@ -86,83 +73,68 @@ const MyRoom = () => {
     var colorList = new Map([]);
 
     const len = albumList.length;
-    const listHeight = 300;
-    const [selectedItem, setSelectedItem] = useState(1); // item's index number
 
-    /****** [1] ******/
-    const itemRef = useRef({});
-    const currentScroll = useRef({ scrollTop: 0, scrollBottom: listHeight });
-    const containerRef = useRef();
-
-    useEffect(() => {
-        const keyPress = (e) => {
-            if (e.key === "ArrowLeft") {
-                // 위로 이동할 때
-                if (selectedItem === 1) return;
-                setSelectedItem((prev) => Number(prev) - 1);
-                /****** [2] ******/
-                const elementTop = (Number(selectedItem) - 2) * 30;
-
-                /****** [4] ******/
-                if (elementTop < currentScroll.current.scrollTop) {
-                    const prevItem = itemRef.current[selectedItem - 1];
-                    prevItem && prevItem.scrollIntoView({ block: "start" });
-                }
-            }
-            if (e.key === "ArrowRight") {
-                // 아래로 이동할 때
-                if (selectedItem >= len) return;
-                setSelectedItem((prev) => Number(prev) + 1);
-                /****** [2] ******/
-                const elementBottom = (Number(selectedItem) + 2) * 30;
-
-                /****** [3] ******/
-                if (elementBottom > currentScroll.current.scrollBottom) {
-                    const nextItem = itemRef.current[selectedItem + 1];
-                    nextItem && nextItem.scrollIntoView({ block: "end" });
-                }
-            }
-        };
-        window.addEventListener("keydown", keyPress);
-        return () => {
-            window.removeEventListener("keydown", keyPress);
-        };
-    }, [selectedItem]);
-
-    const onClickDiv = (e) => {
-        setSelectedItem(e.target.id);
-    };
-
-    const onScroll = (e) => {
-        currentScroll.current = {
-            scrollTop: e.target.scrollTop,
-            scrollBottom: e.target.scrollTop + listHeight,
-        };
-    };
+    var clicked = -1;
 
     const onAlbumOver = (i, j) => {
+        if (clicked == i) { return; }
         console.log("over", i, j);
         if (j > 0) {
             for (let k = 0; k < j; k++) {
-                document.getElementById(`album.${i}.${k}`).style.left = `${k / (albumList[i].length - 2) * 57 + 3}%`;
+                document.getElementById(`album.${i}.${k}`).style.left = `${k / (albumList[i].length - 2) * 57 + 5}%`;
             }
             for (let k = j; k < albumList[i].length; k++) {
-                document.getElementById(`album.${i}.${k}`).style.left = `${(k - 1) / (albumList[i].length - 2) * 57 + 21}%`;
+                document.getElementById(`album.${i}.${k}`).style.left = `${(k - 1) / (albumList[i].length - 2) * 57 + 19}%`;
             }
         }
-        try {
-            document.getElementById("myroomcontainer").style.background = `linear-gradient(to bottom,  ${colorList[(i,j)]} 0%, rgba(255, 255, 255, 1) 100%)`;
-        } catch (e) {
-            document.getElementById("myroomcontainer").style.background = `white`;
+        if (clicked == -1) {
+            try {
+                document.getElementById("myroomlight").style.background = `linear-gradient(to bottom,  ${colorList[(i, j)]} 0%, ${colorList[(i, j)]} 100%)`;
+            } catch (e) {
+                document.getElementById("myroomlight").style.background = `white`;
+            }
         }
     }
 
     const onAlbumLeave = (i, j) => {
+        if (clicked == i) { return; }
         console.log("leave", i, j);
         for (let k = 0; k < albumList[i].length; k++) {
-            document.getElementById(`album.${i}.${k}`).style.left = `${k / (albumList[i].length - 1) * 75 + 3}%`;
+            document.getElementById(`album.${i}.${k}`).style.left = `${k / (albumList[i].length - 1) * 71 + 5}%`;
         }
-        document.getElementById("myroomcontainer").style.background = "white";
+        if (clicked == -1) {
+            document.getElementById("myroomlight").style.background = "rgba(0, 0, 0, 0)";
+        }
+    }
+
+    const onAlbumClick = (i, j) => {
+        if (clicked == i) {
+            clicked = -1
+            onAlbumLeave(i, j);
+            return;
+        }
+        if (clicked != -1) {
+            for (let k = 0; k < albumList[clicked].length; k++) {
+                document.getElementById(`album.${clicked}.${k}`).style.left = `${k / (albumList[clicked].length - 1) * 71 + 5}%`;
+            }
+        }
+        clicked = i;
+        for (let k = 0; k < albumList[i].length; k++) {
+            document.getElementById(`album.${i}.${k}`).style.left = `${k / (albumList[i].length - 1) * 50 + 5}%`;
+        }
+        document.getElementById("myroomlight").style.background = `linear-gradient(to bottom,  ${colorList[(i, j)]} 0%, ${colorList[(i, j)]} 100%)`;
+    }
+
+    const onAdd = (i) => {
+        console.log(`add ${i}`);
+    }
+
+    const onPlay = (i) => {
+        console.log(`play ${i}`);
+    }
+    
+    const onAddPL = () => {
+        console.log(`add playlist`);
     }
 
     const onGramo = () => {
@@ -189,17 +161,20 @@ const MyRoom = () => {
             albums.push(
                 <div id={`album.${j}.${i}`}
                     style={{
-                        width: "80px",
-                        height: "80px",
+                        width: "14%",
+                        height: "65%",
                         backgroundSize: "contain",
-                        left: `${i / (albumList[j].length - 1) * 75 + 3}%`,
+                        backgroundRepeat: "no-repeat",
+                        top: "15%",
+                        left: `${i / (albumList[j].length - 1) * 71 + 5}%`,
                         backgroundImage: `url(${albumList[j][i]})`,
                         position: "absolute",
-                        zIndex: `${albumList[j].length + 2 - i}`,
-                        filter: "drop-shadow(3px 3px 3px #808080f0)"
+                        zIndex: `${albumList[j].length + 80 - i}`,
+                        filter: "drop-shadow(5px 5px 5px #00000080)"
                     }}
                     onMouseOver={() => { onAlbumOver(j, i); }}
                     onMouseLeave={() => { onAlbumLeave(j, i); }}
+                    onClick={() => { onAlbumClick(j, i); }}
                 >
                 </div>
             );
@@ -215,8 +190,8 @@ const MyRoom = () => {
                     .then(color => {
                         // document.getElementById("main-heading").style.color = color.isDark ? '#fff' : '#000';
                         console.log('Average color', color);
-                        colorList[(i,j)] = color.rgba;
-                        console.log(colorList[(i,j)]);
+                        colorList[(i, j)] = color.rgba;
+                        console.log(colorList[(i, j)]);
                     })
             }
         }
@@ -226,22 +201,27 @@ const MyRoom = () => {
         let items = [];
         for (let i = 0; i < len; i++) {
             items.push(
-                <div key={i} className={`item ${Number(selectedItem) === i ? "active" : ""}`} id={i} onClick={onClickDiv}
-                    ref={(ref) => {
-                        itemRef.current = { ...itemRef.current, [i]: ref };
-                    }}
+                <div id={`playlist${i}`}
                     style={{
-                        height: "100px",
+                        width: "auto",
+                        height: "30%",
                         alignSelf: "center",
                         justifyContent: "center",
-                        position: "relative",
-                        padding: "10px"
+                        position: "relative"
                     }} // 계산할 수 있게 사이즈를 지정했다.
                 >
+                    <div id="myroomstick" />
+                    <div id="myroomadd" />
+                    <div id="myroomaddbutton" onClick={() => { onAdd(i); }} />
+                    <div id="myroomplaybutton" onClick={() => { onPlay(i); }} />
                     {renderItem(i)}
                 </div>
             );
         }
+        items.push(
+            <div id={"addplbutton"}
+                onClick = { onAddPL }
+            />)
         return items;
     };
     return (
@@ -249,14 +229,14 @@ const MyRoom = () => {
             <div id="myroombg"></div>
             {renderColor()}
             <div id="myroomtop" />
+            <div id="myroomlight" />
+            <div id="myroomshadow" />
             <div id="albumshelf">
-                <div className="list-container">
-                    {renderList()}
-                </div>
+                {renderList()}
             </div>
-                <Link to="./musingroom">
-                    <div id="gramophone" onClick={onGramo} />
-                </Link>
+            <Link to="./musingroom">
+                <div id="gramophone" onClick={onGramo} />
+            </Link>
         </div>
     );
 }

@@ -53,10 +53,10 @@
     width: 509px;
     height: 509px;
     zoom: 1.28;
-    animation: wobble 4s ease-in-out infinite;
+    animation: musing_wobble 4s ease-in-out infinite;
 }
 
-@keyframes wobble {
+@keyframes musing_wobble {
     0% {
         transform: rotate(-10deg);
         opacity: 1;
@@ -84,10 +84,10 @@
     width: 509px;
     height: 509px;
     zoom: 1.28;
-    animation: spin 5s linear infinite running;
+    animation: musing_spin 5s linear infinite running;
 }
 
-@keyframes spin {
+@keyframes musing_spin {
     0% {
         transform: rotate(0deg);
     }
@@ -105,10 +105,10 @@
     height: 609px;
     z-index: 21;
     position: absolute;
-    animation: armwobble 10s ease-in-out infinite paused;
+    animation: musing_armwobble 10s ease-in-out infinite paused;
 }
 
-@keyframes armwobble {
+@keyframes musing_armwobble {
     0% {
         transform: rotate(5deg) translate(-15px, 5px);
     }
