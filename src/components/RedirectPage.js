@@ -44,7 +44,7 @@ export default class RedirectPage extends React.Component {
         .catch((err) => {
           console.log(err);
         });*/
-      history.push("/playdashboard");
+      history.push("/myroom");
     } catch (error) {
       history.push("/");
     }
