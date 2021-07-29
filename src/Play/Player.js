@@ -4,7 +4,7 @@ import SpotifyPlayer from "react-spotify-web-playback";
 export default function Player({ accessToken, trackUri }) {
   const [play, setPlay] = useState(false);
 
-  useEffect(() => setPlay(true), [trackUri]);
+  useEffect(() => setPlay(true), trackUri);
 
   if (!accessToken) return null;
   return (
@@ -15,7 +15,7 @@ export default function Player({ accessToken, trackUri }) {
         if (!state.isPlaying) setPlay(false);
       }}
       play={play}
-      uris={trackUri ? [trackUri] : []}
+      uris={trackUri ? trackUri : []}
       styles={{
         activeColor: "#fff",
         bgColor: "#0a0e11",

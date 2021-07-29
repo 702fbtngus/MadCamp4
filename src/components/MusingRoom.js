@@ -16,6 +16,13 @@ const MusingRoom = () => {
   //console.log(unit);
   const playlist = [
     {
+      artist: "DAY6",
+      title: "Sweet Chaos",
+      uri: "spotify:track:3G3c7sWlKSv12ft9TGy3D0",
+      albumUrl:
+        "https://i.scdn.co/image/ab67616d00004851e3f3b11777ef77dcf72d9cd2",
+    },
+    {
       artist: "DAY6 (Even of Day)",
       title: "뚫고 지나가요 Right Through Me",
       uri: "spotify:track:6PiDq1VQiwWHxBJjdKviuZ",
@@ -40,17 +47,29 @@ const MusingRoom = () => {
 
   return (
     <div id="musing_allcontainer">
+      <div id="player_container">
+        <Player
+          accessToken={accessToken}
+          //trackUri={"spotify:track:54flyrjcdnQdco7300avMJ"}
+          //trackUri={"spotify:track:3G3c7sWlKSv12ft9TGy3D0"}
+
+          trackUri={playlist.map((track) => {
+            return track.uri;
+          })}
+        />
+      </div>
       <div id="musing_logincontainer">
         <div id="musing_lpcontainer">
           <div id="musing_container">
             <div id="musing_group">
               <div id="musing_glow" />
+
               <div
                 id="musing_record"
                 style={{
                   backgroundImage: `url(
-                    "https://image.bugsm.co.kr/album/images/1000/202837/20283717.jpg"
-                  )`,
+                      "https://image.bugsm.co.kr/album/images/1000/202837/20283717.jpg"
+                    )`,
                 }}
               />
               <div id="musing_arm" />
@@ -59,12 +78,6 @@ const MusingRoom = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div id="player_container">
-        <Player
-          accessToken={accessToken}
-          trackUri={"spotify:track:54flyrjcdnQdco7300avMJ"}
-        />
       </div>
     </div>
   );
