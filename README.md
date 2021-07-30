@@ -43,4 +43,4 @@
 <img src="https://user-images.githubusercontent.com/79245586/127552422-1a55eece-e6f4-4007-81c0-9e5bebbfdea0.png" width="48%">
 
 
-> 곡을 검색하여 추가할 수 있다. 난잘몰라 으헤헤ㅔ헿
+> 곡을 검색하여 추가할 수 있다.
